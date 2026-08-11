@@ -1,0 +1,23 @@
+<form method="POST" action="{{ url_for('cadastrar_episodio') }}">
+
+    <label for="numero">Número do episódio:</label>
+    <input type="number" id="numero" name="numero" required>
+
+    <label for="titulo">Título do episódio:</label>
+    <input type="text" id="titulo" name="titulo" required>
+
+    <label for="descricao">Descrição:</label>
+    <textarea id="descricao" name="descricao" required></textarea>
+
+    <label for="temporada_id">Temporada:</label>
+    <select id="temporada_id" name="temporada_id" required>
+        {% for temporada in temporadas %}
+            <option value="{{ temporada.id }}">
+                Temporada {{ temporada.numero }} - {{ temporada.titulo }}
+            </option>
+        {% endfor %}
+    </select>
+
+    <button type="submit">Cadastrar</button>
+
+</form>

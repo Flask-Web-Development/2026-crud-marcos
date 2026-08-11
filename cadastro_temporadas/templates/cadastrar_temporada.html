@@ -1,0 +1,13 @@
+<form method="POST" action="{{ url_for('cadastrar_temporada') }}">
+
+    <label for="titulo">Título da temporada:</label>
+    <input type="text" id="titulo" name="titulo" required>
+
+    <label for="descricao">Descrição:</label>
+    <textarea id="descricao" name="descricao" required></textarea>
+
+    <label for="status">Status:</label>
+    <input type="text" id="status" name="status" required>
+
+    <button type="submit">Cadastrar</button>
+</form>
