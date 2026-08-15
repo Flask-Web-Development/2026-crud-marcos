@@ -1,0 +1,17 @@
+<h1>Temporadas</h1>
+
+{% for temporada in temporadas %}
+
+    <h2>{{ temporada.titulo }}</h2>
+
+    <p>{{ temporada.descricao }}</p>
+
+    <p>Status: {{ temporada.status }}</p>
+
+    <p>Data: {{ temporada.data_publicacao }}</p>
+
+    <a href="{{ url_for('editar_temporada', id=temporada.id) }}">
+        Editar
+    </a>
+    
+{% endfor %}

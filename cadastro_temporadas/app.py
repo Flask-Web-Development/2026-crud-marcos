@@ -125,6 +125,24 @@ def editar_episodio(id):
         temporadas=temporadas
     )
 
+@app.route("/temporadas")
+def listar_temporadas():
+    temporadas = Temporada.query.all()
+
+    return render_template(
+        "temporadas.html",
+        temporadas=temporadas
+    )
+
+@app.route("/episodios")
+def listar_episodios():
+    episodio = Episodio.query.all()
+
+    return render_template(
+        "episodio.html",
+        episodios=episodios
+    )
+
 with app.app_context():
     db.create_all()
 

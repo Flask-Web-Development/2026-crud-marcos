@@ -1,0 +1,19 @@
+<h1>Episódios/h1>
+
+{% for episodio in episodios %}
+
+    <h2>{{ episodio.numero }}</h2>
+
+    <h2>{{ episodio.titulo }}</h2>
+
+    <p>{{ episodio.descricao }}</p>
+
+    <p>Data: {{ episodio.data_publicacao }}</p>
+
+    <p>Temporada: {{ episodio.temporada.titulo }}</p>
+
+    <a href="{{ url_for('editar_episodio', id=episodio.id) }}">
+        Editar
+    </a>
+
+{% endfor %}
