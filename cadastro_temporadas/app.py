@@ -79,6 +79,52 @@ def cadastrar_episodio():
     return render_template(
         "cadastrar_episodio.html", temporadas=temporadas)
 
+@app.route("/temporada/editar/<int:id>", methods=["GET", "POST"])
+def editar_temporada(id):
+
+    temporada = Temporada.query.get_or_404(id)
+
+    if request.method == "POST":
+        temporada.titulo=request.form["titulo"]
+        temporada.descricao=request.form["descricao"]
+        temporada.data_publicacao=datetime.strptime(
+            request.form["data_publicacao"],
+            "%Y-%m-%d"
+        ).date(),
+        temporada.status=request.form["status"]
+
+        db.session.commit()
+
+        return "Temporada editada com sucesso!"
+    return render_template(
+        "editar_temporada.html",
+        temporadas=temporadas
+    )
+
+@app.route("/episodio/editar/<int:id>", methods=["GET", "POST"])
+def editar_episodio(id):
+
+    episodio = Episodio.query.get_or_404(id)
+
+    if request.method == "POST":
+        episodio.numero=request.form["numero"]
+        episodio.titulo=request.form["titulo"]
+        episodio.descricao=request.form["descricao"]
+        episodio.data_publicacao=datetime.strptime(
+            request.form["data_publicacao"],
+            "%Y-%m-%d"
+        ).date(),
+        episodio.temporada_id=request.form["temporada_id"]
+        
+        db.session.commit()
+
+        return "Temporada editada com sucesso!"
+    return render_template(
+        "editar_episodio.html",
+        episodio=episodio,
+        temporadas=temporadas
+    )
+
 with app.app_context():
     db.create_all()
 

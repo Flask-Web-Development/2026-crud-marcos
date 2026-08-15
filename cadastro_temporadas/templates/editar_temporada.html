@@ -1,0 +1,39 @@
+<form method="POST">
+
+    <label for="titulo">Título da Temporada:</label>
+    <input
+        type="text"
+        id="titulo"
+        name="titulo"
+        value="{{ temporada.titulo}}"
+        required
+    >
+
+    <label for="descricao">Descrição:</label>
+    <textarea
+        id="descricao"
+        name="descricao"
+        required
+    >{{ temporada.descricao }}</textarea>
+
+    <label for="status">Status:</label>
+    <input
+        type="text"
+        id="status"
+        name="status"
+        value="{{ temporada.status }}"
+        required
+    >
+
+    <label for="data_publicacao">Data de publicação:</label>
+    <input
+        type="date"
+        id="data_publicacao"
+        name="data_publicacao"
+        value="{{ temporada.data_publicacao }}"
+        required
+    >
+
+    <button type="submit">Salvar alterações</button>
+
+</form>
