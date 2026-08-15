@@ -13,5 +13,9 @@
     <a href="{{ url_for('editar_temporada', id=temporada.id) }}">
         Editar
     </a>
-    
+
+    <form action="{{ url_for('excluir_temporada', id=temporada.id) }}" method="POST">
+    <button type="submit">Excluir</button>
+    </form>
+
 {% endfor %}
