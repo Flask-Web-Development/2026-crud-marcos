@@ -1,3 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}
+Episódios
+{% endblock %}
+
+{% block content %}
+
 <h1>Episódios</h1>
 
 {% for episodio in episodios %}
@@ -21,3 +29,5 @@
     </form>
 
 {% endfor %}
+
+{% endblock %}

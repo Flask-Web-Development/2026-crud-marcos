@@ -1,3 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}
+Cadastrar Episódios
+{% endblock %}
+
+{% block content %}
+
+<h1>Cadastrar Episódios</h1>
+
 <form method="POST" action="{{ url_for('cadastrar_episodio') }}">
 
     <label for="numero">Número do episódio:</label>
@@ -21,3 +31,5 @@
     <button type="submit">Cadastrar</button>
 
 </form>
+
+{% endblock %}

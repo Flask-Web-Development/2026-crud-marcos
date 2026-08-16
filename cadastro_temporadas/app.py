@@ -37,6 +37,9 @@ class Episodio(db.Model):
         nullable=False
     )
 
+@app.route("/")
+def inicio():
+    return render_template("index.html")
 
 @app.route("/temporadas/cadastrar", methods=["GET", "POST"])
 def cadastrar_temporada():
