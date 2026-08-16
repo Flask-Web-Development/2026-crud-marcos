@@ -1,4 +1,3 @@
-````markdown
 # CRUD de Temporadas
 
 Projeto desenvolvido em Flask para realizar o cadastro e gerenciamento de temporadas e episódios de uma áudio série.
